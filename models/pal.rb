@@ -21,7 +21,7 @@ attr_reader :id, :name, :type
     return Pal.map_items(sql)
   end
 
-  def self.find()
+  def self.find(id)
     sql = "SELECT * FROM pals WHERE id = #{id}"
     return Pal.map_item(sql)
   end
@@ -36,6 +36,5 @@ attr_reader :id, :name, :type
     result = Pal.map_items(sql)
     return result.first
   end
-
 
 end

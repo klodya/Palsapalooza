@@ -15,9 +15,9 @@ end
 
 #create
 post '/pals' do
-  @pals = @Pal.new(params)
+  @pal = Pal.new(params)
   @pal.save
-  redirect to ("pals")
+  erb(:'pals/create')
 end
 
 #show
