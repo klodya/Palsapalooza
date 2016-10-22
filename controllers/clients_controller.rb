@@ -16,7 +16,7 @@ end
 post '/clients' do
   @client = Client.new(params)
   @client.save
-  redirect to("clients")
+  erb(:'clients/create')
 end
 
 #show

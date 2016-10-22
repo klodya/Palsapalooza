@@ -1,0 +1,9 @@
+<h2>Pals</h2>
+
+<% @pals.each do |pal| %>
+ <p>Name: <%= pal.name() %></p>
+ <p>Type: <%= pal.type() %></p>
+
+  <a href="/pals/<%= pal.id %>">View</a><br>
+  <hr>
+<% end %>
