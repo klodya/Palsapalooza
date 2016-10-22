@@ -10,23 +10,23 @@ attr_reader :id, :type
   end
 
   def save()
-    sql "INSERT INTO events (type) VALUES ('#{type}') RETURNING *"
+    sql = "INSERT INTO events (type) VALUES ('#{type}') RETURNING *"
     event = SqlRunner.run(sql).first
     @id = event['id'].to_i
   end
 
   def self.all()
-    sql "SELECT * FROM events"
+    sql = "SELECT * FROM events"
     return Event.map_items(sql)
   end
 
   def self.find(id)
     sql = "SELECT * FROM events WHERE id = #{id}"
-    return Event.map_tiem(sql)
+    return Event.map_item(sql)
   end
 
   def self.map_items(sql)
-    events = SqlRunner.run(slq)
+    events = SqlRunner.run(sql)
     result = events.map{|event| Event.new(event)}
     return result
   end

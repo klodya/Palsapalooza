@@ -1,0 +1,10 @@
+<h2>Events</h2>
+
+<% @events.each do |event| %>
+ <p>Name: <%= event.type() %></p>
+
+  <a href="/events/<%= event.id %>">View</a><br>
+  <hr>
+<% end %>
+
+ 
