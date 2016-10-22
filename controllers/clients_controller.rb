@@ -11,3 +11,24 @@ end
 get '/clients/new' do
   erb(:'clients/new')
 end
+
+#create
+post '/clients' do
+  @client = Client.new(params)
+  @client.save
+  redirect to("clients")
+end
+
+#show
+get '/clients/:id' do
+  @client = Client.find(params['id'])
+  erb(:'clients/show')
+end
+
+
+#edit
+
+#update
+
+#delete
+

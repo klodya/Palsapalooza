@@ -20,6 +20,11 @@ attr_reader :id, :name
     return Client.map_items(sql)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM clients WHERE id = #{id}"
+    return Client.map_item(sql)
+  end
+
   def self.map_items(sql)
     clients = SqlRunner.run(sql)
     result = clients.map {|client| Client.new( client )}
