@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner')
 
-class client
+class Client
 
 attr_reader :id, :name
 

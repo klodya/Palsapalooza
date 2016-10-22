@@ -7,3 +7,7 @@ get '/clients' do
   erb(:'clients/index')
 end
 
+#new
+get '/clients/new' do
+  erb(:'clients/new')
+end
