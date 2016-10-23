@@ -8,5 +8,5 @@ require_relative('controllers/dates_controller')
 
 
 get '/' do
-  erb:home
+  erb(:home)
 end
