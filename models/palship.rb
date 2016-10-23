@@ -17,13 +17,13 @@ attr_reader :id, :client_id, :pal_id
   end
 
   def client()
-    sql = "SELECT * FROM clients WHERE id = #{@client_id}"
-    return Client.map_item(sql)
+    sql = "SELECT clients.* FROM clients INNER JOIN palships ON palships.client_id = client.id WHERE palships.client_id = #{@id}"
+    return Client.map_items(sql)
   end
 
   def pal()
-    sql = "SELECT * FROM pals WHERE id = #{@pal_id}"
-    return Pal.map_item(sql)
+    sql = "SELECT pals.* FROM pals INNER JOIN palships ON palships.pal_id = pal.id WHERE palships.pal_id = #{@id}"
+    return Pal.map_items(sql)
     return result
   end
 
