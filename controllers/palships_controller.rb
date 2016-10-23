@@ -18,7 +18,6 @@ require_relative('../models/pal.rb')
 
 #show
 
-
 #create
 post '/palships' do
   @palship = Palship.new(params)
