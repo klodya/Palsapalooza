@@ -13,7 +13,7 @@ attr_reader :id, :palship_id, :event_id
   def save()
     sql = "INSERT INTO dates (palship_id, event_id) VALUES (#{@palship_id}, #{@event_id}) RETURNING *"
     date = SqlRunner.run(sql).first
-    @id - date['id']
+    @id = date['id']
   end
 
   def self.all()

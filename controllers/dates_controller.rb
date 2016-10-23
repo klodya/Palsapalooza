@@ -1,6 +1,6 @@
 require 'pry-byebug'
 require_relative('../models/palship.rb')
-require_relative('../models/events.rb')
+require_relative('../models/event.rb')
 
 #index
 get '/dates' do
@@ -15,9 +15,11 @@ get '/dates/new' do
 erb(:'dates/new')
 end
 
+#show
+
 #create
 post '/dates' do
-  @dates = Date.new(params)
+  @date = Date.new(params)
   @date.save
   erb(:'dates/create')
 end
