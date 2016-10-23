@@ -1,0 +1,23 @@
+<h2>Get a pal!:</h2>
+
+<form action="/palships" method="post">
+
+<label for="client_id">Client:</label>
+<select name="client_id" id="client_id">
+  <% @clients.each do |client| %>
+    <option value="<%= client.id %>"><%= client.name %></option>
+  <% end %>
+</select>
+<br>
+<p></p>
+<label for="pal_id">Pal:</label>
+<select name="pal_id" id="pal_id">
+  <% @pals.each do |pal| %>
+   <option value="<%= pal.id %>"><%= pal.name %></option>
+   <% end %>
+</select>
+<br>
+<p></p>
+<input type="submit" value="Become pals!">
+
+</form>
