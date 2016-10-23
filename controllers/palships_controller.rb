@@ -17,6 +17,10 @@ require_relative('../models/pal.rb')
   end
 
 #show
+  get '/palships/:id' do
+    @palship = Palship.find(params['id'])
+   erb(:'palships/show')
+  end
 
 #create
 post '/palships' do

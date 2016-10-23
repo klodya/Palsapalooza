@@ -1,6 +1,10 @@
 
   <% @palships.each do |palship| %>
-  Client: <%= palship.client.name  %> - has paled up with: <%= palship.pal.name  %><br><hr>
+  Client: <%= palship.client.name  %> - has paled up with: <%= palship.pal.name  %><br>
+  <a href="/palships/<%= palship.id %>">View</a><br>
+  <hr>
+  <br>
   <% end %>
 
   <a href="/palships/new">Get another pal!</a><br>
+

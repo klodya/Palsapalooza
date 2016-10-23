@@ -24,10 +24,16 @@ attr_reader :id, :client_id, :pal_id
   def pal()
     sql = "SELECT * FROM pals WHERE id = #{@pal_id}"
     return Pal.map_item(sql)
+    return result
   end
 
   def self.all()
     sql = "SELECT * FROM palships"
+    return Palship.map_items(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM palships WHERE id = #{id}"
     return Palship.map_items(sql)
   end
 
