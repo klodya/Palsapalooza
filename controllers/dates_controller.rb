@@ -1,4 +1,5 @@
 require 'pry-byebug'
+require_relative('../models/date.rb')
 require_relative('../models/palship.rb')
 require_relative('../models/event.rb')
 

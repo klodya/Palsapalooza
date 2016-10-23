@@ -21,6 +21,11 @@ attr_reader :id, :palship_id, :event_id
     return Date.map_items(sql)    
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM members WHERE id = #{id}"
+    return Date.map_item(sql)
+  end
+
   def self.map_items(sql)
     dates = SqlRunner.run(sql)
     result = dates.map { |date| Date.new( date ) }
