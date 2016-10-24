@@ -25,6 +25,16 @@ require_relative('../models/pal.rb')
 #create
 post '/palships' do
   @palship = Palship.new(params)
+  if palship.exists?(params)
+    return "something"
+  else
   @palship.save
+end
   erb(:'palships/create')
+end
+
+get '/palships/:id/paldates' do
+  palship = Palship.find(params['id'])
+  @paldates = palship.paldates
+  erb(:'paldates/all')
 end

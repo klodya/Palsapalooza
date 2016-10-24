@@ -3,7 +3,13 @@
 
 <b>Current Pals:</b><br>
 <% @client.pals.each do |pal| %>
-  <a href="/pals/<%= pal.id %>"><%= pal.name %></a> Type: <%= pal.type %><br>
+  <a href="/pals/<%= pal.id %>"><%= pal.name %></a> Type: <%= pal.type %>
+<br><br>
+
+<a href="/palships/<%= pal.id %>">View palship</a><br><br>
+
+
+
 <% end %>
 
 <br><br>

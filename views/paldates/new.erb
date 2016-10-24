@@ -2,13 +2,19 @@
 
   <form action="/paldates" method="post">
 
-    <label for="palship_id">Palship:</label>
+    <label for="palship_id">Client:</label>
     <select name="palship_id" id="palship_id"
     <% @palships.each do |palship| %>
-    <option value="<%= palship.id %>"><%= palship.id %></option>
+    <option value="<%= palship.id %>"><%= palship.client.name %></option>
     <% end %>
   </select>
-  <br>
+  
+    <label for="palship_id">Pal:</label>
+    <select name="palship_id" id="palship_id"
+    <% @palships.each do |palship| %>
+    <option value="<%= palship.id %>"><%= palship.pal.name %></option>
+    <% end %>
+  </select>
   <p><p>
 
     <label for="event_id">Event:</label>

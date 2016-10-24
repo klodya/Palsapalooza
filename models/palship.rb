@@ -16,6 +16,12 @@ attr_reader :id, :client_id, :pal_id
     @id = palship['id']
   end
 
+  def paldates()
+    #return all paldates for this palship
+    sql = "SELECT events.* FROM events INNER JOIN paldates ON paldates.event_id = events.id WHERE paldates.palship_id = #{@id}"
+    return PalDate.map_items(sql)
+  end
+
   def client()
     sql = "SELECT * FROM clients WHERE id = #{@client_id}"
     client = Client.map_item(sql)
