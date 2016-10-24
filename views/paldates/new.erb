@@ -1,8 +1,8 @@
 <h2>Go on a date!<h2>
 
-  <form action="/dates" method="post">
+  <form action="/paldates" method="post">
 
-    <label for="palship_id">Client:</label>
+    <label for="palship_id">Palship:</label>
     <select name="palship_id" id="palship_id"
     <% @palships.each do |palship| %>
     <option value="<%= palship.id %>"><%= palship.id %></option>
@@ -18,6 +18,6 @@
       <% end %>
     </select>
 
-    <input type="submit" value="Go on a date!">
+    <input type="submit" value="Take your pal on a date!">
   
   </form>

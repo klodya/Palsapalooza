@@ -2,3 +2,8 @@
 <p><%= @pal.name() %></p>
 <b>Type:</b>
 <p><%= @pal.type() %></p>
+
+<b>Current Clients:</b>
+<% @pal.clients.each do |client| %>
+  <a href="/clients/<%= client.id %>"><%= client.name %></a>
+<% end %>

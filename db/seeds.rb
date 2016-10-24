@@ -3,7 +3,7 @@ require_relative('../models/pal.rb')
 require_relative('../models/event.rb')
 require_relative('../models/client.rb')
 require_relative('../models/palship.rb')
-require_relative('../models/date.rb')
+require_relative('../models/paldate.rb')
 
 
 
@@ -39,6 +39,8 @@ palship1.save
 palship2.save
 palship3.save
 
+paldate1 = PalDate.new({'palship_id' => palship1.id, 'event_id' => event1.id})
+paldate1.save
 
 binding.pry
 nil

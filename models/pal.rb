@@ -16,6 +16,12 @@ attr_reader :id, :name, :type
     @id = pal['id'].to_i
   end
 
+  def clients()
+    sql = "SELECT clients.* FROM clients INNER JOIN palships ON palships.client_id = clients.id WHERE palships.pal_id = #{@id}"
+    return Client.map_items(sql)
+  end
+
+
   def self.all()
     sql = "SELECT * FROM pals"
     return Pal.map_items(sql)

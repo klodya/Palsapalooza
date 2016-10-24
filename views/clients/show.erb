@@ -1,6 +1,14 @@
 <b>Name:</b>
 <p><%= @client.name() %></p>
 
-<a href="/clients">go back</a><br>
+<b>Current Pals:</b><br>
+<% @client.pals.each do |pal| %>
+  <a href="/pals/<%= pal.id %>"><%= pal.name %></a> Type: <%= pal.type %><br>
+<% end %>
+
+<br><br>
 <a href="/palships/new">get a pal!</a><br>
+<a href="/paldates/new">go on a date!</a><br>
+
+<a href="/clients">go back</a><br>
 

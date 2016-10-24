@@ -1,0 +1,8 @@
+<% @paldates.each do |paldate| %>
+
+<%= paldate.palship.client.name %> went on a <%= paldate.event.type %> date with her pal <%= paldate.palship.pal.name %> <br>
+
+<a href="/paldates/<%= paldate.id %>">View</a>
+<br>
+
+<% end %>
