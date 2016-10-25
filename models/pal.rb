@@ -43,4 +43,17 @@ attr_reader :id, :name, :type
     return result.first
   end
 
+  def self.update(options)
+    sql = "UPDATE pals SET 
+    name = '#{options['name']}',
+    type = '#{options['type']}'  
+    WHERE id = '#{options['id']}'"
+    SqlRunner.run(sql)
+  end
+
+  def self.destroy(id)
+    sql = "DELETE FROM pals WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
 end

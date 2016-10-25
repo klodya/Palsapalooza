@@ -27,8 +27,19 @@ get '/pals/:id' do
 end
 
 #edit
+get '/pals/:id/edit' do
+  @pal = Pal.find(params['id'])
+  erb(:'pals/edit' ) 
+end
 
 #update
+put '/pals/:id' do
+  @pal = Pal.update(params)
+  redirect to("/pals/#{params['id']}")
+end
 
 #delete
-
+delete '/pals/:id' do
+  Pal.destroy(params['id'])
+  redirect to('/pals')
+end

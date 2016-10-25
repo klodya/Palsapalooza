@@ -1,0 +1,18 @@
+<h2>Edit a Pal</h2>
+
+<form action= "/pals/<%= @pal.id  %>" method="post">
+
+  <label for="name">Name:</label>
+  <input type="text" name="name" value="<%= @pal.name %>">
+
+  <label for="type">Type:</label>
+  <select name="type">
+    <option value="Budget" <%= "selected" if @pal.type() == "Budget" %>>Budget</option>
+    <option value="Classic" <%= "selected" if @pal.type() == "Classic" %>>Classic</option>
+    <option value="Deluxe" <%= "selected" if @pal.type() == "Deluxe" %>>Deluxe</option>
+  </select>
+
+  <input type="hidden" name="_method" value="put">
+  
+  <input type='submit' value="Update details">
+</form>

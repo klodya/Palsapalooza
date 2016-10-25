@@ -25,10 +25,21 @@ get '/clients/:id' do
   erb(:'clients/show')
 end
 
-
 #edit
+get '/clients/:id/edit' do
+  @client = Client.find(params['id'])
+  erb(:'clients/edit' ) 
+end
 
 #update
+put '/clients/:id' do
+  @client = Client.update(params)
+  redirect to("/clients/#{params['id']}")
+end
 
 #delete
+delete '/clients/:id' do
+  Client.destroy(params['id'])
+  redirect to('/clients')
+end
 

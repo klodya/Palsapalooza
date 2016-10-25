@@ -41,4 +41,17 @@ attr_reader :id, :name
     return result.first
   end
 
+  def self.update(options)
+    sql = "UPDATE clients SET 
+    name = '#{options['name']}' 
+    WHERE id = '#{options['id']}'"
+    SqlRunner.run(sql)
+  end
+
+  def self.destroy(id)
+    sql = "DELETE FROM clients WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
+
 end
