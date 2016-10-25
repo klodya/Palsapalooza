@@ -22,6 +22,10 @@ attr_reader :id, :client_id, :pal_id
     end
   end
 
+  def can_afford_pal?()
+    return client.pal_point >= pal.point_worth
+  end
+
   def paldates()
     sql = "SELECT events.* FROM events INNER JOIN paldates ON paldates.event_id = events.id WHERE paldates.palship_id = #{@id}"
     return PalDate.map_items(sql)

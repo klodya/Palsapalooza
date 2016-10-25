@@ -3,14 +3,14 @@
   <form action="/paldates" method="post">
 
     <label for="palship_id">Client:</label>
-    <select name="palship_id" id="palship_id"
+    <select name="palship_id" id="palship_id">
     <% @palships.each do |palship| %>
     <option value="<%= palship.id %>"><%= palship.client.name %></option>
     <% end %>
   </select>
   
     <label for="palship_id">Pal:</label>
-    <select name="palship_id" id="palship_id"
+    <select name="palship_id" id="palship_id">
     <% @palships.each do |palship| %>
     <option value="<%= palship.id %>"><%= palship.pal.name %></option>
     <% end %>

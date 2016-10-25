@@ -25,8 +25,11 @@ require_relative('../models/pal.rb')
 #create
 post '/palships' do
   @palship = Palship.new(params)
+  
   if Palship.already_pals?(@palship)
     @message = "You are already pals!"
+  elsif !@palship.can_afford_pal?
+    @message = "You don't have enough pal points!"
   else
     @palship.save
     @message = "You have become pals!"

@@ -26,5 +26,7 @@ end
 post '/paldates' do
   @paldate = PalDate.new(params)
   @paldate.save
+  @paldate.give_points
+  @paldate.palship.client.save
   erb(:'paldates/create')
 end

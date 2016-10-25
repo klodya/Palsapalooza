@@ -10,6 +10,12 @@ attr_reader :id, :palship_id, :event_id
     @event_id = options['event_id'].to_i  
   end
 
+  def give_points
+    points = event().point_gain
+    client = palship().client()
+    client.pal_point += points
+  end
+
   def save()
     sql = "INSERT INTO paldates (palship_id, event_id) VALUES (#{@palship_id}, #{@event_id}) RETURNING *"
     paldate = SqlRunner.run(sql).first
