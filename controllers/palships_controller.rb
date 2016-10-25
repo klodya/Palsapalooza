@@ -25,11 +25,12 @@ require_relative('../models/pal.rb')
 #create
 post '/palships' do
   @palship = Palship.new(params)
-  if palship.exists?(params)
-    return "something"
+  if Palship.already_pals?(@palship)
+    @message = "You are already pals!"
   else
-  @palship.save
-end
+    @palship.save
+    @message = "You have become pals!"
+  end
   erb(:'palships/create')
 end
 

@@ -16,8 +16,13 @@ attr_reader :id, :client_id, :pal_id
     @id = palship['id']
   end
 
+  def self.already_pals?(input_palship)
+   Palship.all.any? do |palship| 
+    palship.pal_id == input_palship.pal_id && palship.client_id == input_palship.client_id
+    end
+  end
+
   def paldates()
-    #return all paldates for this palship
     sql = "SELECT events.* FROM events INNER JOIN paldates ON paldates.event_id = events.id WHERE paldates.palship_id = #{@id}"
     return PalDate.map_items(sql)
   end
