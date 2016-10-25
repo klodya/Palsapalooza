@@ -42,11 +42,11 @@ attr_accessor :id, :name, :pal_point
     return result.first
   end
 
-  def self.update(options)
+  def update()
     sql = "UPDATE clients SET 
-    name = '#{options['name']}',
-    pal_point = #{options['pal_point']}      
-    WHERE id = '#{options['id']}'"
+    name = '#{@name}',
+    pal_point = #{@pal_point}      
+    WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

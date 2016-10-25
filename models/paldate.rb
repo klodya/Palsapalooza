@@ -14,6 +14,7 @@ attr_reader :id, :palship_id, :event_id
     points = event().point_gain
     client = palship().client()
     client.pal_point += points
+    client.update
   end
 
   def save()

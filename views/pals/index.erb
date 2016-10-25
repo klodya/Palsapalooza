@@ -1,11 +1,11 @@
-<h2>Pals</h2>
+<h2>Our Pals</h2>
 
 <% @pals.each do |pal| %>
  <p>Name: <%= pal.name() %></p>
  <p>Type: <%= pal.type() %></p>
  <p>Point worth: <%= pal.point_worth() %></p>
 
-  <a href="/pals/<%= pal.id %>">View</a><br>
+  <a href="/pals/<%= pal.id %>">view</a><br>
   <hr>
 <% end %>
 

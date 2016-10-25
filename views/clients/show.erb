@@ -1,20 +1,19 @@
 <h2>Your Profile:</h2>
 
 <p><b>Name:</b>
-<p><%= @client.name() %></p>
+<%= @client.name() %></p>
 
 <p><b>Pal points:</b>
-<p><%= @client.pal_point() %>
+<%= @client.pal_point() %></p>
 
-<br><br>
 <a class="button2" href="/clients/<%= @client.id %>/edit">edit</a></p>
-
+<br>
 
 <b>Current Pals:</b>
 <p><% @client.pals.each do |pal| %>
   <a href="/pals/<%= pal.id %>"><%= pal.name %></a>
   <br><br>
-  Type: <%= pal.type %></p>
+  <b>Type: </b><%= pal.type %></p>
 
 <a href="/palships/<%= pal.id %>"> view palship</a>
 <br><br>

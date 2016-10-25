@@ -1,4 +1,4 @@
-require 'pry-byebug'
+# require 'pry-byebug'
 require_relative('../models/client')
 
 #index
@@ -33,7 +33,10 @@ end
 
 #update
 put '/clients/:id' do
-  @client = Client.update(params)
+  @client = Client.find(params['id'])
+  @client.name = params['name']
+  # @client.pal_point = params['pal_point']
+  @client.update
   redirect to("/clients/#{params['id']}")
 end
 
