@@ -1,13 +1,14 @@
-<h2>Clients</h2>
+<h2>Our Clients</h2>
 
 <% @clients.each do |client| %>
- <p>Name: <%= client.name() %></p>
+ <p>Name: <%= client.name() %><br><br>
+ 
+ <a href="/clients/<%= client.id %>">view profile</a></p>
+ 
+ <hr>
 
-  <a href="/clients/<%= client.id %>">View</a><br>
-  
-  <hr>
 <% end %>
 
-  <a href="/clients/new">Join today!</a><br>
+ <br><a class="button" href="/clients/new">Join today!</a><br>
 
 

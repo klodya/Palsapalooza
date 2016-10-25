@@ -1,3 +1,7 @@
+body {
+  font-family: Calibri, sans-serif;
+}
+
 nav ul li {
   display: inline-block;
   list-style: none;
@@ -18,4 +22,30 @@ nav a:hover {
 nav {
   padding: 5px;
   background-color: lightblue;
+  border-radius: 5px;
+}
+
+.button {
+    text-decoration: none;
+    display: block;
+    width: 90px;
+    height: 15px;
+    background: lightblue;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.button2 {
+  text-decoration: none;
+  display: inline-block;
+  width: 80px;
+  height: 15px;
+  background: lightblue;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
 }

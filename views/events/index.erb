@@ -3,9 +3,10 @@
 <% @events.each do |event| %>
  <p>Name: <%= event.type() %></p>
 
-  <a href="/events/<%= event.id %>">View</a><br>
+  <a href="/events/<%= event.id %>">more details</a><br>
   <hr>
 <% end %>
+<br>
 
-  <a href="/events/new">Create a new event!</a><br>
+<a class="button2" href="/events/new">add event</a><br>
  

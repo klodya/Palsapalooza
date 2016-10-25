@@ -1,18 +1,24 @@
+<h2>Pal Profile:</h2>
+
 <b>Name:</b>
 <p><%= @pal.name() %></p>
 
 <b>Type:</b>
 <p><%= @pal.type() %></p>
 
+<a class="button2" href="/pals/<%= @pal.id %>/edit">edit</a>
+<br><br>
+<hr>
+
 <b>Current Clients:</b>
+<br><br>
 <% @pal.clients.each do |client| %>
   <a href="/clients/<%= client.id %>"><%= client.name %></a>
-  <br><br>
-
-  <form actions="/pals/<%= @pal.id %>" method="post">
-    <input type="submit" value="Delete"/>
-    <input name="_method" type="hidden" value="Delete"/>
-  </form>
-
-  <a href="/pals/<%= @pal.id %>/edit">Edit</a>
+<br><br>
 <% end %>
+
+<br><br>
+<form actions="/pals/<%= @pal.id %>" method="post">
+  <input type="submit" value="Delete profile"/>
+  <input name="_method" type="hidden" value="Delete"/>
+</form>

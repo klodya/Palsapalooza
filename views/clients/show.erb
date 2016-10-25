@@ -1,25 +1,30 @@
-<b>Name:</b>
-<p><%= @client.name() %></p>
+<h2>Your Profile:</h2>
 
-<b>Current Pals:</b><br>
+<b>Name:</b>
+<p><%= @client.name() %>
+<br><br>
+<a class="button2" href="/clients/<%= @client.id %>/edit">edit</a></p>
+
+
+<b>Current Pals:</b>
 <p><% @client.pals.each do |pal| %>
   <a href="/pals/<%= pal.id %>"><%= pal.name %></a>
-  <br>Type: <%= pal.type %></p>
+  <br><br>
+  Type: <%= pal.type %></p>
 
-<a href="/palships/<%= pal.id %>">View palship</a>
-<a href="/clients/<%= @client.id %>/edit">Edit</a>
+<a href="/palships/<%= pal.id %>"> view palship</a>
+<br><br>
+<hr>
+<% end %>
+
+<hr>
+
+<a class="button2" href="/palships/new">new pal</a>
+<a class="button2" href="/paldates/new">new date</a>
+
 <br><br>
 
 <form actions="/clients/<%= @client.id %>" method="post">
-  <input type="submit" value="Delete"/>
+  <input type="submit" value="Delete profile"/>
   <input name="_method" type="hidden" value="Delete"/>
 </form>
-
-<% end %>
-
-<br><br>
-<a href="/palships/new">get a pal!</a><br>
-<a href="/paldates/new">go on a date!</a><br>
-
-<a href="/clients">go back</a><br>
-

@@ -1,10 +1,12 @@
+  <h2>Palships</h2>
+
   <% @palships.each do |palship| %>
-  Client: <%= palship.client.name %> - is pals with: <%= palship.pal.name  %><br>
-  <a href="/palships/<%= palship.id %>">View</a><br>
+  <%= palship.client.name %> is pals with: <%= palship.pal.name %><br>
+  <br><a href="/palships/<%= palship.id %>">view palship</a><br>
   <hr>
   <br>
   <% end %>
 
-  <a href="/palships/new">Make a new Palship</a><br>
-  <a href="/pals/new">Add a new Pal!</a><br>
+  <a class="button2" href="/palships/new">new pal</a>
+  <a class="button2"href="/pals/new">add a pal</a>
 
