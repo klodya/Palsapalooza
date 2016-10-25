@@ -1,7 +1,11 @@
 <h2>Your Profile:</h2>
 
-<b>Name:</b>
-<p><%= @client.name() %>
+<p><b>Name:</b>
+<p><%= @client.name() %></p>
+
+<p><b>Pal points:</b>
+<p><%= @client.pal_point() %>
+
 <br><br>
 <a class="button2" href="/clients/<%= @client.id %>/edit">edit</a></p>
 

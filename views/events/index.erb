@@ -2,6 +2,7 @@
 
 <% @events.each do |event| %>
  <p>Name: <%= event.type() %></p>
+ <p>Point gain: <%= event.point_gain() %></p>
 
   <a href="/events/<%= event.id %>">more details</a><br>
   <hr>

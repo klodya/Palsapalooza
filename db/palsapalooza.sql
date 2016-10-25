@@ -7,18 +7,21 @@ DROP TABLE pals CASCADE;
 
 CREATE TABLE clients(
 id serial4 PRIMARY KEY,
-name VARCHAR(255)
+name VARCHAR(255),
+pal_point NUMERIC
 );
 
 CREATE TABLE pals(
 id serial4 PRIMARY KEY,
 name VARCHAR(255),
-type VARCHAR(255)
+type VARCHAR(255),
+point_worth NUMERIC
 );
 
 CREATE TABLE events(
 id serial4 PRIMARY KEY,
-type VARCHAR(255)
+type VARCHAR(255),
+point_gain NUMERIC
 );
 
 CREATE TABLE palships(

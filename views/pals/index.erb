@@ -3,6 +3,7 @@
 <% @pals.each do |pal| %>
  <p>Name: <%= pal.name() %></p>
  <p>Type: <%= pal.type() %></p>
+ <p>Point worth: <%= pal.point_worth() %></p>
 
   <a href="/pals/<%= pal.id %>">View</a><br>
   <hr>

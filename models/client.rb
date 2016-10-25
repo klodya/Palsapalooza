@@ -2,15 +2,16 @@ require_relative('../db/sql_runner')
 
 class Client
 
-attr_reader :id, :name
+attr_reader :id, :name, :pal_point
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
+    @pal_point = options['pal_point'].to_i
   end
 
   def save()
-    sql = "INSERT INTO clients (name) VALUES ('#{@name}') RETURNING *"
+    sql = "INSERT INTO clients (name, pal_point) VALUES ('#{@name}', #{@pal_point}) RETURNING *"
     client = SqlRunner.run(sql).first
     @id = client['id'].to_i
   end
@@ -43,7 +44,8 @@ attr_reader :id, :name
 
   def self.update(options)
     sql = "UPDATE clients SET 
-    name = '#{options['name']}' 
+    name = '#{options['name']}',
+    pal_point = #{options['pal_point']}      
     WHERE id = '#{options['id']}'"
     SqlRunner.run(sql)
   end

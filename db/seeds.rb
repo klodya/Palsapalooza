@@ -7,25 +7,25 @@ require_relative('../models/paldate.rb')
 
 
 
-client1 = Client.new({'name' => 'Mia'})
-client2 = Client.new({'name' => 'Claudia'})
-client3 = Client.new({'name' => 'Joe'})
+client1 = Client.new({'name' => 'Mia', 'pal_point' => 10})
+client2 = Client.new({'name' => 'Claudia', 'pal_point' => 10})
+client3 = Client.new({'name' => 'Joe', 'pal_point' => 10})
 
 client1.save
 client2.save
 client3.save
 
-pal1 = Pal.new({'name' => 'Brian', 'type' => 'Budget'})
-pal2 = Pal.new({'name' => 'John Smith', 'type' => 'Classic'})
-pal3 = Pal.new({'name' => 'Donny King', 'type' => 'Deluxe'})
+pal1 = Pal.new({'name' => 'Brian', 'type' => 'Budget', 'point_worth' => 0})
+pal2 = Pal.new({'name' => 'John Smith', 'type' => 'Classic', 'point_worth' => 50})
+pal3 = Pal.new({'name' => 'Donny King', 'type' => 'Deluxe', 'point_worth' => 100})
 
 pal1.save
 pal2.save
 pal3.save
 
-event1 = Event.new({'type' => 'Cinema'})
-event2 = Event.new({'type' => 'Dinner'})
-event3 = Event.new({'type' => 'Stroll'})
+event1 = Event.new({'type' => 'Cinema', 'point_gain' => 5})
+event2 = Event.new({'type' => 'Dinner', 'point_gain' => 10})
+event3 = Event.new({'type' => 'Stroll', 'point_gain' => 20})
 
 event1.save
 event2.save

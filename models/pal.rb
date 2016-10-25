@@ -2,16 +2,17 @@ require_relative('../db/sql_runner')
 
 class Pal
 
-attr_reader :id, :name, :type
+attr_reader :id, :name, :type, :point_worth
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
     @type = options['type']
+    @point_worth = options['point_worth'].to_i
   end
 
   def save()
-    sql ="INSERT INTO pals (name, type) VALUES ('#{@name}', '#{@type}') RETURNING *"
+    sql ="INSERT INTO pals (name, type, point_worth) VALUES ('#{@name}', '#{@type}', #{@point_worth}) RETURNING *"
     pal = SqlRunner.run(sql).first
     @id = pal['id'].to_i
   end
@@ -46,7 +47,8 @@ attr_reader :id, :name, :type
   def self.update(options)
     sql = "UPDATE pals SET 
     name = '#{options['name']}',
-    type = '#{options['type']}'  
+    type = '#{options['type']}',
+    point_worth = '#{options['point_worth']}'    
     WHERE id = '#{options['id']}'"
     SqlRunner.run(sql)
   end

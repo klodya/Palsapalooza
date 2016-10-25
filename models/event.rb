@@ -2,15 +2,16 @@ require_relative('../db/sql_runner')
 
 class Event
 
-attr_reader :id, :type
+attr_reader :id, :type, :point_gain
   
   def initialize(options)
     @id = options['id'].to_i
     @type = options['type']
+    @point_gain = options['point_gain'].to_i  
   end
 
   def save()
-    sql = "INSERT INTO events (type) VALUES ('#{type}') RETURNING *"
+    sql = "INSERT INTO events (type, point_gain) VALUES ('#{type}', #{point_gain}) RETURNING *"
     event = SqlRunner.run(sql).first
     @id = event['id'].to_i
   end
