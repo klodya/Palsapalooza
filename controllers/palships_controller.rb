@@ -41,6 +41,7 @@ end
 
 get '/palships/:id/paldates' do
   palship = Palship.find(params['id'])
+  
   @paldates = palship.paldates
   erb(:'paldates/all')
 end

@@ -1,24 +1,32 @@
 <h2>Your Profile:</h2>
 
-<h4>Name:
-  <%= @client.name() %></h4>
 
-  <h5>Pal points:
-    <%= @client.pal_point() %></h5>
+<img src="/images/profile.png" style="width:100px; height:100px">
 
-    <a class="button2" href="/clients/<%= @client.id %>/edit">edit</a></p>
 
-    <h4>Current Pals:</h4>
-    <h5><% @client.pals.each do |pal| %>
-      <a href="/pals/<%= pal.id %>"><%= pal.name %></a></h5>
-    
-      <b>Type: </b><%= pal.type %></p><br>
+<div class="grid-profile">
+  <h4>Name:
+    <%= @client.name() %></h4>
 
-      <a href="/palships/<%= pal.id %>"><img src="/images/heart_mug.png" style="width:50px; height:50px"></a>
+    <h5>Pal points:
+      <%= @client.pal_point() %></h5>
+
+      <a class="button2" href="/clients/<%= @client.id %>/edit">edit</a>
+      </div>   
+
+      <div class="grid-profile">
+      <h4>Current Pals:</h4>
+      <h5><% @client.pals.each do |pal| %>
+        <a href="/pals/<%= pal.id %>"><%= pal.name %></a></h5>
+
+        <h5>Type: <%= pal.type %></h5>
+      </div>     
+      <% end %>
+      
+      <br><br>
+
       <a href="/palships/new"><img src="/images/new_pal.png" style="width:50px; height:50px"></a>
       <a href="/"><img src="/images/home.png" style="width:50px; height:50px"></a>
-
-      <% end %>
 
       <br><br>
 
