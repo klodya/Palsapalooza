@@ -1,5 +1,15 @@
 body {
-  font-family: Calibri, sans-serif;
+  font-family: 'Bungee Hairline', cursive;
+}
+
+h1 {
+  font-family: 'Bungee Hairline', cursive;
+  font-size: 40px;
+}
+
+h4 {
+  font-family: 'Bungee Hairline', cursive;
+  font-size: 16px;
 }
 
 nav ul li {
@@ -48,4 +58,24 @@ nav {
   text-align: center;
   border-radius: 5px;
   color: white;
+}
+
+.grid-client{
+  background: #E0EEEE;
+  border-radius: 25px;
+  width: 160px;
+  height: 200px;
+  display: inline-block;
+  text-align: center;
+  flex-direction: column;
+}
+
+.grid-pal{
+  background: #E0EEEE;
+  border-radius: 25px;
+  width: 160px;
+  height: 300px;
+  display: inline-block;
+  text-align: center;
+  flex-direction: column;
 }

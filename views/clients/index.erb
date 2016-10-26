@@ -1,14 +1,17 @@
-<h2>Our Clients</h2>
+<h1>Our Clients</h1>
 
 <% @clients.each do |client| %>
- <p>Name: <%= client.name() %><br><br>
- 
- <a href="/clients/<%= client.id %>">view profile</a></p>
- 
- <hr>
-
+<div class="grid-client">
+<br><%= client.name() %><br><br>
+  <img src="/images/misc_profile.png" style="width:70px; 
+  height:70px"><br><br>
+  <a href="/clients/<%= client.id %>">view profile</a></p>
+</div>
 <% end %>
 
- <br><a class="button" href="/clients/new">Join today!</a><br>
+
+<br><br>
+<a class="button" href="/clients/new">Join!</a><br>
+
 
 

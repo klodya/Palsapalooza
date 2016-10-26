@@ -22,6 +22,12 @@ attr_reader :id, :client_id, :pal_id
     end
   end
 
+  def take_points()
+    points = pal.point_worth
+    target_client = client()
+    target_client.get_friend(points)
+  end
+
   def can_afford_pal?()
     return client.pal_point >= pal.point_worth
   end

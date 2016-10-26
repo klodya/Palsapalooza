@@ -21,6 +21,13 @@ attr_accessor :id, :name, :pal_point
     return Pal.map_items(sql)
   end
 
+  def get_friend(points)
+    target_client = self
+    target_client.pal_point -= points
+    target_client.update
+  end
+
+
   def self.all()
     sql = "SELECT * FROM clients"
     return Client.map_items(sql)
