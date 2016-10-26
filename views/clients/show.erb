@@ -1,33 +1,28 @@
 <h2>Your Profile:</h2>
 
-<p><b>Name:</b>
-<%= @client.name() %></p>
+<h4>Name:
+  <%= @client.name() %></h4>
 
-<p><b>Pal points:</b>
-<%= @client.pal_point() %></p>
+  <h5>Pal points:
+    <%= @client.pal_point() %></h5>
 
-<a class="button2" href="/clients/<%= @client.id %>/edit">edit</a></p>
-<br>
+    <a class="button2" href="/clients/<%= @client.id %>/edit">edit</a></p>
 
-<b>Current Pals:</b>
-<p><% @client.pals.each do |pal| %>
-  <a href="/pals/<%= pal.id %>"><%= pal.name %></a>
-  <br><br>
-  <b>Type: </b><%= pal.type %></p>
+    <h4>Current Pals:</h4>
+    <h5><% @client.pals.each do |pal| %>
+      <a href="/pals/<%= pal.id %>"><%= pal.name %></a></h5>
+    
+      <b>Type: </b><%= pal.type %></p><br>
 
-<a href="/palships/<%= pal.id %>"> view palship</a>
-<br><br>
-<hr>
-<% end %>
+      <a href="/palships/<%= pal.id %>"><img src="/images/heart_mug.png" style="width:50px; height:50px"></a>
+      <a href="/palships/new"><img src="/images/new_pal.png" style="width:50px; height:50px"></a>
+      <a href="/"><img src="/images/home.png" style="width:50px; height:50px"></a>
 
-<hr>
+      <% end %>
 
-<a class="button2" href="/palships/new">new pal</a>
-<a class="button2" href="/paldates/new">new date</a>
+      <br><br>
 
-<br><br>
-
-<form actions="/clients/<%= @client.id %>" method="post">
-  <input type="submit" value="Delete profile"/>
-  <input name="_method" type="hidden" value="Delete"/>
-</form>
+      <form actions="/clients/<%= @client.id %>" method="post">
+        <input type="submit" value="Delete profile"/>
+        <input name="_method" type="hidden" value="Delete"/>
+      </form>

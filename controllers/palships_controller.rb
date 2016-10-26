@@ -19,6 +19,7 @@ require_relative('../models/pal.rb')
 #show
   get '/palships/:id' do
     @palship = Palship.find(params['id'])
+    @events = Event.all
    erb(:'palships/show')
   end
 
