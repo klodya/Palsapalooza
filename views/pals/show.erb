@@ -1,25 +1,27 @@
 <h2>Pal Profile:</h2>
 
-<p><b>Name:</b>
-<%= @pal.name() %></p>
+<div class="grid-profile">
+<h4>Name:
+<%= @pal.name() %></h4>
 
-<p><b>Type:</b>
-<%= @pal.type() %></p>
+<h5>Type:</b>
+<%= @pal.type() %></h5>
 
-<p><b>Point worth:</b>
-<%= @pal.point_worth() %></p>
+<h5>Point worth:</b>
+<%= @pal.point_worth() %></h5>
 
 <a class="button2" href="/pals/<%= @pal.id %>/edit">edit</a>
-<br><br>
-<hr>
+</div>
 
-<b>Current Clients:</b>
-<br><br>
-<% @pal.clients.each do |client| %>
+<div class="grid-profile">
+<h4>Current Clients:</h4>
+<h5><% @pal.clients.each do |client| %>
   <a href="/clients/<%= client.id %>"><%= client.name %></a>
-<br><br>
+  <br><br>
 <% end %>
-
+</h5></div>
+<img src="/images/profile.png" style="width:100px; height:100px"> 
+<br><br>
 <a href="/"><img src="/images/home.png" style="width:50px; height:50px"></a>
 
 <br><br>
