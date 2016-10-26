@@ -2,10 +2,10 @@
 
 <% @clients.each do |client| %>
 <div class="grid-client">
-<br><%= client.name() %><br><br>
-  <img src="/images/misc_profile.png" style="width:70px; 
-  height:70px"><br><br>
-  <a href="/clients/<%= client.id %>">view profile</a></p>
+<h4><%= client.name() %></h4>
+  
+  <a href="/clients/<%= client.id %>"><img src="/images/misc_profile.png" style="width:80px; 
+  height:80px"></a></p>
 </div>
 <% end %>
 

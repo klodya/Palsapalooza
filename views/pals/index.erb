@@ -2,13 +2,12 @@
 
 <% @pals.each do |pal| %>
 <div class="grid-pal">
- <br><%= pal.name() %>
- <h4>Type</h4><%= pal.type() %>
- <h4>Point worth</h4><%= pal.point_worth() %><br><br>
+ <h4><%= pal.name() %></h4>
+ <h5>Type: <%= pal.type() %></h5>
+ <h5>Points: <%= pal.point_worth() %></h5>
 
-  <img src="/images/heart.png" style="width:50px; 
-  height:50px"><br>
-  <a href="/pals/<%= pal.id %>">view</a>
+  <a href="/pals/<%= pal.id %>"><img src="/images/heart.png" style="width:50px; 
+  height:50px"></a>
  </div>
 <% end %>
 
