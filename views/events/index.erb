@@ -1,13 +1,14 @@
-<h2>Events</h2>
+<h1>Our Events</h1>
 
 <% @events.each do |event| %>
- <p>Name: <%= event.type() %></p>
- <p>Point gain: <%= event.point_gain() %></p>
+ <div class="grid-pal">
+ <h4><%= event.type() %><h4>
+ <h5>Point gain: <%= event.point_gain() %></h5>
 
-  <a href="/events/<%= event.id %>">more details</a><br>
-  <hr>
+  <a href="/events/<%= event.id %>"><img src="/images/map.png" style="width:80px; height:80px"></a><br>
+</div>
 <% end %>
-<br>
+<br><br>
 
-<a class="button2" href="/events/new">add event</a><br>
+<a class="button2" href="/events/new">add new</a>
  

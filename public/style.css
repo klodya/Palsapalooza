@@ -31,7 +31,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: lightgrey;
+  background-color: #E0EEEE;
 }
 
 nav {
@@ -79,8 +79,9 @@ nav {
   background: #E0EEEE;
   border-radius: 25px;
   width: 160px;
-  height: 230px;
+  height: 240px;
   display: inline-block;
   text-align: center;
   flex-direction: column;
 }
+

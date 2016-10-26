@@ -1,12 +1,16 @@
-  <h2>Palships</h2>
+  <h1>Palships</h1>
 
   <% @palships.each do |palship| %>
-  <%= palship.client.name %> is pals with: <%= palship.pal.name %><br>
-  <br><a href="/palships/<%= palship.id %>">view palship</a><br>
-  <hr>
-  <br>
+  <div class="grid-pal">
+  <h4><%= palship.client.name %></h4> 
+  <a href="/palships/<%= palship.id %>"><img src="/images/heart_mug.png" style="width:80px; height:80px"></a>
+  <h4><%= palship.pal.name %></h4>
+  
+  </div>
+  
   <% end %>
-
+  <br><br>
+  
   <a class="button2" href="/palships/new">new pal</a>
-  <a class="button2"href="/pals/new">add a pal</a>
+  <a class="button2"href="/pals/new">add pal</a>
 
