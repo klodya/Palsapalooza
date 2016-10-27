@@ -1,11 +1,10 @@
 <h1>Our Pals</h1>
 
 <% @pals.each do |pal| %>
-<div class="grid-pal">
+<div class="grid-client">
  <h4><%= pal.name() %></h4>
- <h5>Type: <%= pal.type() %></h5>
- <h5>Points: <%= pal.point_worth() %></h5>
- <a href="/pals/<%= pal.id %>"><img src="/images/heart.png" style="width:60px; height:60px"></a>
+
+ <a href="/pals/<%= pal.id %>"><img src="/images/heart.png" style="width:80px; height:80px"></a>
  </div>
 
 <% end %>
