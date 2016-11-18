@@ -15,6 +15,8 @@
       <h5><% @client.pals.each do |pal| %>
         <a href="/pals/<%= pal.id %>"><%= pal.name %></a>
         <br><br>
+        <a href="/pals/<%= pal.id %>"><img src="/images/heart.png" style="width:80px; height:80px"></a>
+        <br><br>
       <% end %>
       </h5></div>
 
